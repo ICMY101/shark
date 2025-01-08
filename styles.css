@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.loading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-inner {
+    display: none; /* 可以选择隐藏内部加载器，如果需要的话 */
+}
+
+
+
+.progress-container {
+    width: 80%;
+    background: #e0e0e0;
+    border-radius: 25px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 30px;
+    width: 0;
+    background: #3498db;
+    border-radius: 25px;
+    transition: width 2s ease-in-out;
+}
+
+.content {
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.content.visible {
+    opacity: 1;
+}
+
+#randomImage {
+    width: 600px; /* 放大图片 */
+    height: auto; /* 保持图片比例 */
+    margin-bottom: 20px; /* 图片和按钮之间的间距 */
+}
+
+#nextImageButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
